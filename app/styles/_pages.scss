@@ -1,6 +1,9 @@
 // Homepage
+body {
+  background: #FAFAFA;
+}
 .header.home {
-  padding-top: 165px;
+  padding-top: 9.94rem;
   text-align: center;
   .logo {
     width: 373px;
@@ -53,4 +56,32 @@
     }
   }
 
+  .feat {
+    margin-top: 3rem;
+    span {
+      margin-left: 1.0rem;
+    }
+  }
+
+  .icon-circle {
+    display: inline-block;
+    border: 1px solid $primary;
+    padding: 1.25rem;
+    border-radius: 100%;
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+footer {
+  border-top: 1px solid #D7D7D7;
+  padding-top: 1.8rem;
+  padding-bottom: .8rem;
+  margin-top: 7rem;
+  background-color: #fff;
+  img {
+    width: 1.66rem;
+  }
 }
