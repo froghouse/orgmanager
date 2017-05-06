@@ -81,7 +81,14 @@ footer {
   padding-bottom: .8rem;
   margin-top: 7rem;
   background-color: #fff;
+  p {
+    float:left;
+  }
   img {
     width: 1.66rem;
+    float:right;
+    &:hover {
+      opacity: .8;
+    }
   }
 }
