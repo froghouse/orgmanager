@@ -29,6 +29,7 @@ return [
     'changed'           => 'Password Changed',
     'notchanged'        => "You didn't change anything!",
     'alldb'             => 'All your organizations were added to our database!',
+    'unabledb'          => 'We were unable to find any organizations!',
     'sync'              => 'Sync successfull!',
     'updated'           => ' was updated!',
     'loggedin'          => 'Sucessfully logged in!',

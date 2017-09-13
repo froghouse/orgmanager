@@ -16,10 +16,13 @@ class GithubController extends Controller
 
     public function syncOrgs()
     {
-        $this->listOrgs();
-        $this->checkPerm();
+        if($this->listOrgs()) {
+            $this->checkPerm();
 
-        return redirect('dashboard')->withSuccess(trans('alerts.alldb'));
+            return redirect('dashboard')->withSuccess(trans('alerts.alldb'));
+        }
+
+        return redirect('dashboard')->with('error', trans('alerts.unabledb'));
     }
 
     public function syncOrg(Org $org)
@@ -37,7 +40,12 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $orgs = Github::api('user')->orgs();
-        $this->storeOrgs($orgs);
+        if(count($orgs) > 1) {
+            $this->storeOrgs($orgs);
+            return true;
+        }
+
+        return false;
     }
 
     public function storeOrgs($orgs)

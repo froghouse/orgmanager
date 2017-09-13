@@ -96,6 +96,11 @@
         swal("Good job!", "{{ session('success') }}", "success")
     </script>
 @endif
+@if (session('error'))
+    <script>
+        sweetAlert('Oops...', "{{ session('error') }}", "error");
+    </script>
+@endif
 @yield('footer')
 @include('layouts.code.footer')
 </body>
