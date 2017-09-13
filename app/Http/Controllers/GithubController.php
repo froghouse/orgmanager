@@ -40,7 +40,7 @@ class GithubController extends Controller
     {
         Github::authenticate(Auth::user()->token, null, 'http_token');
         $orgs = Github::api('user')->orgs();
-        if(count($orgs) > 1) {
+        if(count($orgs) > 0) {
             $this->storeOrgs($orgs);
             return true;
         }
